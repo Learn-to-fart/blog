@@ -1,70 +1,41 @@
 module.exports = {
-  extends: ['airbnb'],
-  parser: '@babel/eslint-parser',
-  // plugins: ['react', 'jest', 'unicorn', 'react-hooks'],
+  parser: '@typescript-eslint/parser', // 定义ESLint的解析器
+  extends: ['plugin:prettier/recommended'], // 定义文件继承的子规范
+  plugins: ['@typescript-eslint', 'react-hooks', 'eslint-plugin-react'], // 定义了该eslint文件所依赖的插件
   env: {
+    // 指定代码的运行环境
     browser: true,
-    node: true,
-    es6: true,
-    mocha: true,
-    jest: true,
-    jasmine: true,
-  },
-  rules: {
-    strict: ['error', 'never'],
-    'react/display-name': 0,
-    'react/jsx-props-no-spreading': 0,
-    'react/state-in-constructor': 0,
-    'react/static-property-placement': 0,
-    // Too restrictive: https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/destructuring-assignment.md
-    'react/destructuring-assignment': 'off',
-    'react/jsx-filename-extension': 'off',
-    'react/no-array-index-key': 'warn',
-    'react-hooks/rules-of-hooks': 'error',
-    'react-hooks/exhaustive-deps': 'warn',
-    'react/require-default-props': 0,
-    'react/jsx-fragments': 0,
-    'react/jsx-wrap-multilines': 0,
-    'react/prop-types': 0,
-    'react/forbid-prop-types': 0,
-    'react/sort-comp': 0,
-    'react/react-in-jsx-scope': 0,
-    'react/jsx-one-expression-per-line': 0,
-    'generator-star-spacing': 0,
-    'function-paren-newline': 0,
-    'sort-imports': 0,
-    'class-methods-use-this': 0,
-    'no-confusing-arrow': 0,
-    'linebreak-style': 0,
-    // Too restrictive, writing ugly code to defend against a very unlikely scenario: https://eslint.org/docs/rules/no-prototype-builtins
-    'no-prototype-builtins': 'off',
-    'unicorn/prevent-abbreviations': 'off',
-    // Conflict with prettier
-    'arrow-body-style': 0,
-    'arrow-parens': 0,
-    'object-curly-newline': 0,
-    'implicit-arrow-linebreak': 0,
-    'operator-linebreak': 0,
-    'no-param-reassign': 2,
-    'space-before-function-paren': 0,
-    'react/self-closing-comp': 1,
-    'react/jsx-key': 1,
+    node: true
   },
   settings: {
-    // support import modules from TypeScript files in JavaScript files
-    'import/resolver': {
-      node: {
-        extensions: ['.js', '.jsx', '.ts', '.tsx', '.d.ts'],
-      },
-    },
-    'import/parsers': {
-      '@typescript-eslint/parser': ['.ts', '.tsx', '.d.ts'],
-    },
-    'import/extensions': ['.js', '.mjs', '.jsx', '.ts', '.tsx', '.d.ts'],
-    'import/external-module-folders': ['node_modules', 'node_modules/@types'],
-    polyfills: ['fetch', 'Promise', 'URL', 'object-assign'],
+    // 自动发现React的版本，从而进行规范react代码
     react: {
-      version: 'detect',
-    },
+      pragma: 'React',
+      version: 'detect'
+    }
   },
+  parserOptions: {
+    // 指定ESLint可以解析JSX语法
+    ecmaVersion: 2019,
+    sourceType: 'module',
+    ecmaFeatures: {
+      jsx: true
+    }
+  },
+  rules: {
+    // 自定义的一些规则
+    'prettier/prettier': 'error',
+    'linebreak-style': ['error', 'unix'],
+    'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'warn',
+    'react/jsx-uses-react': 'error',
+    'react/jsx-uses-vars': 'error',
+    'react/react-in-jsx-scope': 'error',
+    'valid-typeof': [
+      'warn',
+      {
+        requireStringLiterals: false
+      }
+    ]
+  }
 };
