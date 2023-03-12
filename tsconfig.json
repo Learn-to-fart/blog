@@ -7,6 +7,29 @@
       "dom.iterable",
       "esnext"
     ],
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ],
+      "@assets/*": [
+        "./src/assets/*"
+      ],
+      "@pages/*": [
+        "./src/pages/*"
+      ],
+      "@utils/*": [
+        "./src/utils/*"
+      ],
+      "@components/*": [
+        "./src/components/*"
+      ],
+      "@models/*": [
+        "./src/models/*"
+      ],
+      "@images/*": [
+        "./src/assets/images/*"
+      ]
+    },
     // 要包含在编译中的依赖库文件列表
     "allowJs": true,
     // 允许编译 JavaScript 文件
@@ -45,6 +68,7 @@
     "noFallthroughCasesInSwitch": true
   },
   "include": [
+    "src",
     "src/**/*"
     // *** TypeScript文件应该进行类型检查 ***
   ],

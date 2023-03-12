@@ -1,8 +1,8 @@
 import React from 'react';
 import type { RouteObject } from 'react-router-dom';
 
-const BaseLayout = React.lazy(() => import(/* webpackChunkName: "BaseLayout" */ '../layout/BaseLayout'));
-const Home = React.lazy(() => import(/* webpackChunkName: "Home" */ '../pages/Home'));
+const BaseLayout = React.lazy(() => import(/* webpackChunkName: "BaseLayout" */ '@/layout/BaseLayout'));
+const Home = React.lazy(() => import(/* webpackChunkName: "Home" */ '@pages/Home'));
 
 const routes: RouteObject[] = [
   {
