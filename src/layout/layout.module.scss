@@ -1,0 +1,24 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #ccc;
+}
+
+// 头部
+.header {
+  height: 44px;
+  width: 100%;
+  background: #eee;
+}
+
+// 底部
+.footer {
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  left: 0;
+}

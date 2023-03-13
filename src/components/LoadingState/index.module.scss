@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background: #93b5cf;
+
+  .content {
+    font-size: 40px;
+    font-weight: bold;
+    color: #f0f5e5;
+  }
+}

@@ -1,5 +1,71 @@
-@import "./variable.scss";
+body, dd, dl, fieldset, form, h1, h2, h3, h4, h5, h6, legend, p, pre {
+  margin: 0
+}
 
-*{
-  background: pink;
+fieldset, ol, ul {
+  margin: 0;
+  padding: 0
+}
+
+td, th {
+  padding: 0
+}
+
+table {
+  font-size: inherit
+}
+
+fieldset, img {
+  border: 0
+}
+
+li, ol, ul {
+  list-style: none
+}
+
+body {
+  line-height: 1.5;
+}
+
+h1, h2, h3, h4 {
+  font-size: 18px;
+  font-weight: 400
+}
+
+body, button, input, select, textarea {
+  font-family: PingFang SC, -apple-system, SF UI Text, Lucida Grande, STheiti, Microsoft YaHei, sans-serif;
+  outline: none;
+  -webkit-text-size-adjust: none
+}
+
+button, input, select, textarea {
+  font-size: inherit;
+}
+
+a {
+  text-decoration: none;
+}
+
+:focus {
+  outline: none
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+  display: block
+}
+
+audio, canvas, video {
+  display: inline-block
+}
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+  font: 14px/1.42857 system-ui;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
 }

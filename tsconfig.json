@@ -69,6 +69,7 @@
   },
   "include": [
     "src",
+    "src/*",
     "src/**/*"
     // *** TypeScript文件应该进行类型检查 ***
   ],
