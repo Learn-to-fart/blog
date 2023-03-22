@@ -28,6 +28,9 @@
       ],
       "@images/*": [
         "./src/assets/images/*"
+      ],
+      "@document/*": [
+        "./src/document/*"
       ]
     },
     // 要包含在编译中的依赖库文件列表
