@@ -294,6 +294,7 @@ module.exports = function (webpackEnv) {
         '@pages': path.resolve(__dirname, '../src/pages'),
         '@utils': path.resolve(__dirname, '../src/utils'),
         '@models': path.resolve(__dirname, '../src/models'),
+        '@document': path.resolve(__dirname, '../src/document'),
         '@images': path.resolve(__dirname, '../src/assets/images'),
         '@components': path.resolve(__dirname, '../src/components')
       },
@@ -341,6 +342,10 @@ module.exports = function (webpackEnv) {
                   }
                 }
               ]
+            },
+            {
+              test: /\.md$/,
+              use: ['raw-loader']
             },
             // TODO: Merge this config once `image/avif` is in the mime-db
             // https://github.com/jshttp/mime-db

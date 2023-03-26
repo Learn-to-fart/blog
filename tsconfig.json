@@ -28,6 +28,9 @@
       ],
       "@images/*": [
         "./src/assets/images/*"
+      ],
+      "@document/*": [
+        "./src/document/*"
       ]
     },
     // 要包含在编译中的依赖库文件列表
@@ -70,12 +73,12 @@
   "include": [
     "src",
     "src/*",
-    "src/**/*"
-    // *** TypeScript文件应该进行类型检查 ***
+    "src/**/*",
+    "src/types/ui-neumorphism.d.ts"
   ],
   "exclude": [
-    "node_modules",
+    "node_modules/*",
+    "node_modules/**",
     "build"
-  ]
-  // *** 不进行类型检查的文件 ***
+  ],
 }

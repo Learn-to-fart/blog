@@ -8,7 +8,9 @@ const BaseLayout: React.FC = () => {
   return (
     <main className={styles.main}>
       <Header />
-      <Outlet />
+      <div className={styles.content}>
+        <Outlet />
+      </div>
       <Footer />
     </main>
   );

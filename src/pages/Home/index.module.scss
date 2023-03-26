@@ -1,3 +1,24 @@
-.content {
-  font-size: 90px;
+.container {
+  display: flex;
+  position: relative;
+  max-width: 1280px;
+  margin-right: auto;
+  margin-left: auto;
+  width: 100%;
+  height: 100%;
+
+  .contentLeft {
+    left: 0;
+    top: 0;
+    width: 180px;
+    min-width: 180px;
+    max-width: 180px;
+    margin-right: $margin-size-lg;
+  }
+
+  .contentMain {
+    flex: 0 auto;
+    width: 100%;
+    padding: $padding-size-lg;
+  }
 }

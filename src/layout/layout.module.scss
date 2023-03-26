@@ -1,24 +1,55 @@
 .main {
   display: flex;
   flex-direction: column;
-  height: 100%;
-  background: #ccc;
+  background: #e4ebf5;
+  /* 父元素一定要给高度 */
+
 }
 
 // 头部
 .header {
+  display: flex;
+  position: relative;
+  margin-right: auto;
+  margin-left: auto;
   height: 44px;
   width: 100%;
-  background: #eee;
+  max-width: 1280px;
+
+  /* logo */
+  .headerLogo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 0;
+    width: 40px;
+    height: 40px;
+  }
+
+  /* 标题 */
+  .headerTitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-size: $font-size-h2;
+    font-weight: bold;
+
+    .headerTitleLink {
+
+    }
+  }
+}
+
+.content{
+  flex: 1;
 }
 
 // 底部
 .footer {
-  position: fixed;
-  bottom: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  left: 0;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 1280px;
+  height: 30px;
 }
