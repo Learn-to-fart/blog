@@ -8,12 +8,17 @@
   height: 100%;
 
   .contentLeft {
-    left: 0;
-    top: 0;
+    position: relative;
     width: 180px;
     min-width: 180px;
     max-width: 180px;
     margin-right: $margin-size-lg;
+    .contentLeftList{
+      position: sticky;
+      left: 0;
+      top: 0;
+      width: 100%;
+    }
   }
 
   .contentMain {
