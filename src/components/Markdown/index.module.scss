@@ -1,21 +1,8 @@
 .container {
-  p, blockquote, ul, ol, dl, table, pre, details {
-    margin-top: 0;
-    margin-bottom: 16px;
-  }
-
-  blockquote {
-    padding: 0 1em;
-    color: var(--color-fg-muted);
-    border-left: 0.25em solid var(--color-border-default);
-  }
-
-  code, tt {
-    padding: 0.2em 0.4em;
-    margin: 0;
-    font-size: 85%;
-    white-space: break-spaces;
-    background-color: var(--color-neutral-muted);
-    border-radius: 6px;
+  :global {
+    .md-editor {
+      --md-bk-color: transparent !important;
+    }
   }
 }
+
