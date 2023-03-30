@@ -18,7 +18,7 @@ const Home: React.FC = () => {
         </Card>
       </div>
       <Card className={styles.contentMain}>
-        <Markdown textContent={document} darkMode language={''} />
+        <Markdown textContent={document} />
       </Card>
     </div>
   );
