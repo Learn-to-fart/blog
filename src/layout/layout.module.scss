@@ -1,9 +1,11 @@
 .main {
   display: flex;
   flex-direction: column;
-  background: #e4ebf5;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  background: $color-primary-bg;
   /* 父元素一定要给高度 */
-
 }
 
 // 头部
@@ -12,9 +14,9 @@
   position: relative;
   margin-right: auto;
   margin-left: auto;
-  height: 44px;
+  height: 60px;
   width: 100%;
-  max-width: 1280px;
+  background: $color-auxiliary-bg;
 
   /* logo */
   .headerLogo {
@@ -33,18 +35,27 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    font-size: $font-size-h2;
-    font-weight: bold;
 
     .headerTitleLink {
+      font-size: $font-size-base;
+      color: $color-second-text;
+      padding: 0 $padding-size-sl;
 
+      &:hover {
+        color: $color-emphasize-text;
+      }
+
+      &.active {
+        font-size: $font-size-lg;
+        color: $color-emphasize-text;
+      }
     }
   }
 }
 
-.content{
+.content {
   flex: 1;
-  height: calc(100% - 74px);
+  height: calc(100% - 97px);
 }
 
 // 底部
