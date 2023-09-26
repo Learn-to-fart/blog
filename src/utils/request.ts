@@ -7,23 +7,22 @@ export interface ApiResponse<T> {
   data: T;
 }
 
-class Axios {
-  private static instance: Axios;
-  private axiosInstance: AxiosInstance;
+class Request {
+  instance: AxiosInstance;
 
   // 构造函数私有化，保证单例模式
-  private constructor(baseURL?: string) {
-    this.axiosInstance = axios.create({
-      baseURL,
-      timeout: 5000
-    });
+  constructor(config: AxiosRequestConfig) {
+    this.instance = axios.create(config);
     // 请求拦截器，可以在请求之前做一些处理，如添加token等
-    this.axiosInstance.interceptors.request.use(
+    this.instance.interceptors.request.use(
       (config: any) => {
         const token = localStorage.getItem('token');
-        if (token) {
+        if (!token) {
           config.headers = {
-            Authorization: `Token ${token}`
+            Authorization:
+              1 ||
+              'Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6Imdzc2ciLCJlbWFpbCI6IjQ5MDEwNDcyMkBxcS5jb20iLCJpYXQiOjE2OTU2NTc5Njh9.ol2zla2_kDPPz_pPnmm0c1tW3vfL3NOTKcN4MzlcQf4' ||
+              `Token ${token}`
           };
         }
         return config;
@@ -33,7 +32,7 @@ class Axios {
       }
     );
     // 响应拦截器，对响应结果进行统一处理
-    this.axiosInstance.interceptors.response.use(
+    this.instance.interceptors.response.use(
       (response) => {
         const res = response.data as ApiResponse<any>;
         if (res.code !== 0) {
@@ -42,27 +41,32 @@ class Axios {
         return response.data;
       },
       (error) => {
-        console.error('网络异常', error);
         return Promise.reject(error);
       }
     );
   }
 
-  public static getInstance(baseURL?: string): Axios {
-    if (!this.instance) {
-      this.instance = new Axios(baseURL);
-    }
-    return this.instance;
+  request<T>(config: AxiosRequestConfig): Promise<T> {
+    return new Promise((resolve, reject) => {
+      this.instance
+        .request<any, T>(config)
+        .then((res) => {
+          resolve(res);
+        })
+        .catch((err) => {
+          reject(err);
+          return err;
+        });
+    });
   }
 
-  public async request<T>(config: AxiosRequestConfig): Promise<T> {
-    try {
-      const response = await this.axiosInstance.request(config);
-      return response as T;
-    } catch (error) {
-      throw error;
-    }
+  get<T = any>(config: AxiosRequestConfig<T>): Promise<T> {
+    return this.request<T>({ ...config, method: 'GET' });
+  }
+
+  post<T = any>(config: AxiosRequestConfig<T>): Promise<T> {
+    return this.request<T>({ ...config, method: 'POST' });
   }
 }
 
-export default Axios.getInstance('http://127.0.0.1:8080');
+export default Request;
