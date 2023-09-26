@@ -1,4 +1,12 @@
-/* 边框圆角 */
+/* 颜色 */
+$color-primary: #FF8800; /* 主要颜色 */
+$color-primary-text: #333333; /* 主要文本颜色： */
+$color-second-text: #888888; /* 次要文本颜色 */
+$color-emphasize-text: #FF8800; /* 强调文本颜色 */
+$color-primary-bg: #F4F4F4; /* 主要背景色： */
+$color-auxiliary-bg: #FFFFFF; /* 辅助背景色（如卡片、面板等） */
+$color-emphasize-bg: #333333; /* 主要颜色 */
+
 $border-radius-sm: 4px; // 小
 $border-radius-base: 8px; // 基本
 $border-radius-lg: 16px; // 大
