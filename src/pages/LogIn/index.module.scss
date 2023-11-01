@@ -1,0 +1,58 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: $color-primary-bg;
+
+  .content {
+    display: flex;
+    width: 60%;
+    min-width: 720px;
+    height: 600px;
+    overflow: hidden;
+    background-color: $color-auxiliary-bg;
+    border-radius: $border-radius-lg;
+    :global(.ant-card-body){
+      display: flex;
+      width: 100%;
+
+    }
+
+    .contentLeft,
+    .contentRight {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+
+    .contentLeft {
+      flex: 3;
+    }
+
+    .contentRight {
+      flex: 5;
+
+    }
+
+    .contentTitle {
+      font-size: $font-size-h2 + 2;
+      font-weight: bold;
+      color: #000;
+      margin-bottom: $margin-size-lg * 2;
+    }
+
+    .contentIntro {
+      font-size: $font-size-sm;
+      color: $color-second-text;
+    }
+
+    .contentButton {
+      margin-top: $margin-size-lg * 2;
+    }
+
+  }
+}
