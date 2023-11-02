@@ -1,5 +1,6 @@
 import { combineReducers, createStore, applyMiddleware, compose } from 'redux';
 import article from '@/store/article';
+import user from '@/store/user';
 import thunk from 'redux-thunk';
 
 // @ts-ignore
@@ -7,6 +8,7 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__?.({ trace: 
 
 // 将多个reducer合并在一起
 const reducer = combineReducers({
+  user,
   article
 });
 
