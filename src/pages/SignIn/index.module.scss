@@ -14,10 +14,11 @@
     overflow: hidden;
     background-color: $color-auxiliary-bg;
     border-radius: $border-radius-lg;
-    :global(.ant-card-body){
+
+    :global(.ant-card-body) {
       display: flex;
       width: 100%;
-
+      padding: 0;
     }
 
     .contentLeft,
@@ -30,12 +31,12 @@
     }
 
     .contentLeft {
-      flex: 3;
+      flex: 5;
+      box-shadow: 5px 0 10px -5px #858585;
     }
 
     .contentRight {
-      flex: 5;
-
+      flex: 3;
     }
 
     .contentTitle {
